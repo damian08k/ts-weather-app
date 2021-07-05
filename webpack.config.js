@@ -13,9 +13,9 @@ const webpackConfig = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
-    target: 'es5',
+    target: 'web',
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: './dist',
         port: 3300,
     },
     module: {
