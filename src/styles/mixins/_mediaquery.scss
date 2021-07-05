@@ -1,0 +1,16 @@
+@function getQuery($breakpoint) {
+    @return map-get($map: $breakpoints, $key: $breakpoint);
+}
+
+@mixin mediaQuery($breakpoint) {
+    $breakpoint-value: getQuery($breakpoint);
+    $breakpoint-value-as-string: '(#{$breakpoint-value})';
+
+    @if ($breakpoint-value) {
+        @media #{$breakpoint-value-as-string} {
+            @content;
+        }
+    } @else {
+        @error "Unknown breakpoint - #{breakpoint}";
+    }
+}

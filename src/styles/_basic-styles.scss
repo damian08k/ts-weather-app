@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/sky_bg_640x360.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include mediaQuery(mobileXMedium) {
+        background-image: url('../assets/sky_bg_1280x720.jpg');
+    }
+
+    @include mediaQuery(desktopMedium) {
+        background-image: url('../assets/sky_bg_1920x1080.jpg');
+    }
+}
