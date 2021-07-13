@@ -1,0 +1,11 @@
+.weather {
+    padding: $main-padding;
+    margin: $main-margin;
+    flex-basis: 80%;
+    max-width: 1000px;
+    min-height: 300px;
+    border: 2px solid $black;
+    border-radius: 20px;
+    background-color: rgba(lighten($color: $black, $amount: 10%), 0.5);
+    color: $white;
+}

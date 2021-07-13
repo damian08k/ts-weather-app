@@ -1,0 +1,83 @@
+.header {
+    border-bottom: 2px solid $white;
+    text-align: center;
+    position: relative;
+
+    @include mediaQuery(mobileMedium) {
+        @include addFlex();
+    }
+
+    &__app-logo {
+        flex-basis: 100%;
+        order: 1;
+
+        &::after {
+            content: '';
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: white;
+        }
+
+        @include mediaQuery(mobileMedium) {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    &__city-info {
+        padding: 0 0 $main-padding;
+        order: 0;
+
+        @include mediaQuery(mobileMedium) {
+            margin-right: auto;
+            padding-left: $main-padding * 3;
+        }
+    }
+    &__city-name {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+    &__weather-description {
+        padding-top: $main-padding / 2;
+        font-size: 1.8rem;
+    }
+    &__weather-info {
+        @include addFlex();
+        flex-wrap: wrap;
+        padding: $main-padding;
+        order: 2;
+
+        @include mediaQuery(mobileMedium) {
+            padding-right: $main-padding * 3;
+            flex-wrap: nowrap;
+        }
+    }
+    &__temp {
+        flex-basis: 100%;
+        font-size: 2.5rem;
+
+        @include mediaQuery(mobileMedium) {
+            padding-right: $main-padding * 2;
+        }
+    }
+    &__deg-value {
+        margin-right: $main-margin / 5;
+    }
+    &__weather-img {
+        padding-top: $main-padding / 2;
+        width: 80px;
+        height: 80px;
+
+        @include mediaQuery(mobileMedium) {
+            // margin-right: $main-padding;
+        }
+    }
+}

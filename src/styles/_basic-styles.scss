@@ -10,8 +10,10 @@ html {
 }
 
 .background {
+    @include addFlex();
+
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('../assets/sky_bg_640x360.jpg');
     background-repeat: no-repeat;
     background-size: cover;
