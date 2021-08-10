@@ -1,0 +1,4 @@
+@mixin addBlackWhiteColors($bgColor, $txtColor) {
+    background-color: #{$bgColor};
+    color: #{$txtColor};
+}
