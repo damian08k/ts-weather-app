@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .header {
     border-bottom: 2px solid $white;
     text-align: center;
@@ -46,7 +48,7 @@
         font-weight: 400;
     }
     &__weather-description {
-        padding-top: $main-padding / 2;
+        padding-top: math.div($main-padding, 2);
         font-size: 1.8rem;
     }
     &__weather-info {
@@ -69,15 +71,12 @@
         }
     }
     &__deg-value {
-        margin-right: $main-margin / 5;
+        margin-right: math.div($main-margin, 5);
     }
+
     &__weather-img {
-        padding-top: $main-padding / 2;
+        padding-top: math.div($main-padding, 2);
         width: 80px;
         height: 80px;
-
-        @include mediaQuery(mobileMedium) {
-            // margin-right: $main-padding;
-        }
     }
 }

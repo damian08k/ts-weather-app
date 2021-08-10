@@ -11,6 +11,6 @@
             @content;
         }
     } @else {
-        @error "Unknown breakpoint - #{breakpoint}";
+        @error "Unknown breakpoint - #{$breakpoint}";
     }
 }

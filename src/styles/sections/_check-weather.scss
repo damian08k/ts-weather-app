@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .check-weather {
     text-align: center;
 
@@ -13,7 +15,7 @@
 
     &__city-name-input {
         margin: 0 0 $main-margin;
-        padding: $main-padding/2 $main-padding;
+        padding: math.div($main-padding, 2) $main-padding;
         width: 100%;
         border: 1px solid $black;
         border-radius: 20px;
