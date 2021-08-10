@@ -18,10 +18,14 @@
             <div class="weather">
                 <header class="weather__header header">
                     <h1 class="header__app-logo">
-                        <img src="assets/logo.svg" alt="App logo - ligthning" class="header__logo">
+                        <img
+                            src="assets/logo.svg"
+                            alt="App logo - ligthning"
+                            class="header__logo"
+                        />
                     </h1>
                     <div class="header__city-info">
-                        <h2 class="header__city-name">Warszawa</h1>
+                        <h2 class="header__city-name">Warszawa</h2>
                         <p class="header__weather-description">overcast clouds</p>
                     </div>
                     <div class="header__weather-info">
@@ -35,7 +39,70 @@
                         />
                     </div>
                 </header>
-                <section class="weather__check-weather check-weather"></section>
+                <section class="weather__check-weather check-weather">
+                    <h2 class="check-weather__info-heading">
+                        Check weather forecast for your city
+                    </h2>
+                    <form class="check-weather__forecast-form forecast-form">
+                        <input
+                            class="forecast-form__city-name-input"
+                            type="text"
+                            aria-label="Type city name"
+                            placeholder="City name..."
+                        />
+                        <div class="forecast-form__days-buttons-container">
+                            <div class="forecast-form__day">
+                                <input
+                                    id="1"
+                                    name="day-forecast"
+                                    class="forecast-form__forecast-day-button"
+                                    type="radio"
+                                />
+                                <label class="forecast-form__day-label" for="1">1 day</label>
+                            </div>
+                            <div class="forecast-form__day">
+                                <input
+                                    id="7"
+                                    name="day-forecast"
+                                    class="forecast-form__forecast-day-button"
+                                    type="radio"
+                                />
+                                <label class="forecast-form__day-label" for="7">7 days</label>
+                            </div>
+                            <div class="forecast-form__day">
+                                <input
+                                    id="10"
+                                    name="day-forecast"
+                                    class="forecast-form__forecast-day-button"
+                                    type="radio"
+                                />
+                                <label class="forecast-form__day-label" for="10">10 days</label>
+                            </div>
+                            <div class="forecast-form__day">
+                                <input
+                                    id="14"
+                                    name="day-forecast"
+                                    class="forecast-form__forecast-day-button"
+                                    type="radio"
+                                    data-days="14"
+                                />
+                                <label class="forecast-form__day-label" for="14">14 days</label>
+                            </div>
+                            <div class="forecast-form__day">
+                                <input
+                                    id="16"
+                                    name="day-forecast"
+                                    class="forecast-form__forecast-day-button"
+                                    type="radio"
+                                />
+                                <label class="forecast-form__day-label" for="16">16 days</label>
+                            </div>
+                        </div>
+                        <button class="forecast-form__check-weather" type="submit">
+                            Check weather forecast
+                        </button>
+                    </form>
+                </section>
             </div>
         </div>
     </body>

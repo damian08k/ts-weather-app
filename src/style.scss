@@ -3,8 +3,10 @@
 @import './styles/mixins/mediaquery';
 @import './styles/mixins/addFocus';
 @import './styles/mixins/addFlex';
+@import './styles/mixins/addBlackWhiteColors';
 
 @import './styles/basic-styles';
 @import './styles/weather';
 
 @import './styles/sections/header';
+@import './styles/sections/check-weather';
