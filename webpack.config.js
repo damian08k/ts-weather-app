@@ -17,6 +17,7 @@ const webpackConfig = {
     devServer: {
         contentBase: './dist',
         port: 3300,
+        open: true,
     },
     module: {
         rules: [
