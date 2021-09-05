@@ -1,6 +1,4 @@
-interface SuccessCoords {
-    [index: number]: number;
-}
+type SuccessCoords = [number, number];
 
 const options = {
     enableHighAccuracy: true,
