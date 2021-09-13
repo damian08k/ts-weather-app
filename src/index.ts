@@ -1,7 +1,25 @@
-const x = 'www';
+// const API_KEY = '5c579f4983c7f22a4656485d7aa40d87';
 
-let func: (a: string, b: number) => string | number;
+import UserCityByLocation from './ts/UserCityByLocation';
 
-func = (a, b) => x + b;
+class APP {
+    private userCityByLocation: UserCityByLocation;
 
-func(x, 10);
+    static appInstance: APP;
+
+    private constructor() {
+        this.userCityByLocation = new UserCityByLocation();
+        this.userCityByLocation.getCityByLocation();
+    }
+
+    static getInstance() {
+        if (APP.appInstance) {
+            return this.appInstance;
+        }
+
+        this.appInstance = new APP();
+        return this.appInstance;
+    }
+}
+
+const app = APP.getInstance();
