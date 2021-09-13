@@ -1,4 +1,6 @@
-type SuccessCoords = [number, number];
+import SuccessCoords from './types/SuccessCoords';
+
+const defaultCoords: SuccessCoords = [40.73061, -73.935242];
 
 const options = {
     enableHighAccuracy: true,
@@ -10,7 +12,6 @@ class UserLocation {
     public success(position: GeolocationPosition): SuccessCoords {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        console.log(latitude, longitude);
 
         return [latitude, longitude];
     }
@@ -22,13 +23,13 @@ class UserLocation {
 
 const userLocation = new UserLocation();
 
-const userLocationCoords = new Promise(result => {
+const userLocationCoords = new Promise<SuccessCoords>(result => {
     navigator.geolocation.getCurrentPosition(
         position => {
             const userCoords: SuccessCoords = userLocation.success(position);
             result(userCoords);
         },
-        () => result('default'),
+        () => result(defaultCoords),
         options
     );
 });
