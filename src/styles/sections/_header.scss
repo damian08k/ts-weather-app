@@ -41,6 +41,7 @@
         @include mediaQuery(mobileMedium) {
             margin-right: auto;
             padding-left: $main-padding * 3;
+            width: 350px;
         }
     }
     &__city-name {
