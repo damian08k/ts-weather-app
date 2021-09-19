@@ -2,7 +2,7 @@ import Weather from './Weather';
 
 interface IForecastClass {
     getForecast(cityName: string): Promise<void>;
-    setForecast(temperatureValue: number, weatherDescription: string): void;
+    setForecast(temperatureValue: number, weatherDescription: string, imageURL: string): void;
 }
 
 interface ITemperatureResponse {
@@ -35,16 +35,22 @@ class Forecast implements IForecastClass {
                 this.changeTempFromKelvinToCelsius(parseInt(temperatureInfo.temp))
             );
             const weatherDescription = weatherInfo.description as string;
+            const imageURL = `http://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png`;
 
-            this.setForecast(temperatureValue, weatherDescription);
+            this.setForecast(temperatureValue, weatherDescription, imageURL);
         } catch (error) {
             console.error(error);
         }
     }
 
-    public setForecast(temperatureValue: number, weatherDescription: string): void {
+    public setForecast(
+        temperatureValue: number,
+        weatherDescription: string,
+        imageURL: string
+    ): void {
         this.weather.setTemperature(temperatureValue);
         this.weather.setWeatherDescription(weatherDescription);
+        this.weather.setWeatherImage(imageURL, weatherDescription);
     }
 
     private changeTempFromKelvinToCelsius(temperatureInKelvin: number): number {

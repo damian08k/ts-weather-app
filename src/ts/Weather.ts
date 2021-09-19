@@ -1,7 +1,7 @@
 interface IWeather {
     setCityName(cityName: string): void;
     setWeatherDescription(weatherDescription: string): void;
-    setWeatherImage(weatherDescription: string): void;
+    setWeatherImage(imageURL: string, weatherDescription: string): void;
     setTemperature(temperature: number): void;
 }
 
@@ -15,7 +15,7 @@ class Weather implements IWeather {
         this.init();
     }
 
-    init(): void {
+    private init(): void {
         this.appCityName = document.querySelector('[data-city]') as HTMLHeadingElement;
         this.appWeatherDescription = document.querySelector(
             '[data-weather-description]'
@@ -24,17 +24,18 @@ class Weather implements IWeather {
         this.appWeatherImage = document.querySelector('[data-weather-image]') as HTMLImageElement;
     }
 
-    setCityName(cityName: string): void {
+    public setCityName(cityName: string): void {
         this.appCityName.textContent = cityName;
     }
-    setWeatherDescription(weatherDescription: string): void {
+    public setWeatherDescription(weatherDescription: string): void {
         this.appWeatherDescription.textContent = weatherDescription;
     }
-    setWeatherImage(weatherDescription: string): void {
-        // Just for now, it will be changed later by switch/if and images
-        this.appWeatherImage.textContent = weatherDescription;
+    public setWeatherImage(imageURL: string, weatherDescription: string): void {
+        this.appWeatherImage.src = imageURL;
+        this.appWeatherImage.alt = weatherDescription;
+        this.appWeatherImage.style.display = 'block';
     }
-    setTemperature(temperature: number): void {
+    public setTemperature(temperature: number): void {
         this.appTemperatureValue.textContent = temperature.toString();
     }
 }
