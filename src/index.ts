@@ -1,7 +1,23 @@
-const x = 'www';
+import UserCityByLocation from './ts/UserCityByLocation';
 
-let func: (a: string, b: number) => string | number;
+class APP {
+    private userCityByLocation: UserCityByLocation;
 
-func = (a, b) => x + b;
+    static appInstance: APP;
 
-func(x, 10);
+    private constructor() {
+        this.userCityByLocation = new UserCityByLocation();
+        this.userCityByLocation.getCityByLocation();
+    }
+
+    static getInstance() {
+        if (APP.appInstance) {
+            return this.appInstance;
+        }
+
+        this.appInstance = new APP();
+        return this.appInstance;
+    }
+}
+
+const app = APP.getInstance();

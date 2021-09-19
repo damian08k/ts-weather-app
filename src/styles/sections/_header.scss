@@ -41,6 +41,7 @@
         @include mediaQuery(mobileMedium) {
             margin-right: auto;
             padding-left: $main-padding * 3;
+            width: 350px;
         }
     }
     &__city-name {
@@ -75,6 +76,7 @@
     }
 
     &__weather-img {
+        display: none;
         padding-top: math.div($main-padding, 2);
         width: 80px;
         height: 80px;
