@@ -1,3 +1,4 @@
+import Forecast from './Forecast';
 import Weather from './Weather';
 
 import userLocationCoords from './UserLocation';
@@ -9,9 +10,11 @@ interface IAddressResponse {
 
 class UserCityByLocation {
     private weather: Weather;
+    private forecast: Forecast;
 
     constructor() {
         this.weather = new Weather();
+        this.forecast = new Forecast();
     }
 
     public async getCityByLocation(): Promise<void> {
@@ -32,6 +35,8 @@ class UserCityByLocation {
             const cityName = this.checkDoesAdressHasProperty(address);
 
             this.weather.setCityName(cityName);
+
+            await this.forecast.getForecast(cityName);
         } catch (error) {
             console.error(error);
         }

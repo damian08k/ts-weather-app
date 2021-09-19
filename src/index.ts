@@ -1,5 +1,3 @@
-// const API_KEY = '5c579f4983c7f22a4656485d7aa40d87';
-
 import UserCityByLocation from './ts/UserCityByLocation';
 
 class APP {
