@@ -76,6 +76,7 @@
     }
 
     &__weather-img {
+        display: none;
         padding-top: math.div($main-padding, 2);
         width: 80px;
         height: 80px;
